@@ -1,0 +1,1 @@
+c:\windows\system32\wscript.exe c:\scada\scripts\mapnetworkdrive.vbs %1

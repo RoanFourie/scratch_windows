@@ -1,0 +1,1 @@
+C:\windows\system32\wscript.exe c:\windows\system32\taskclose.vbs %1

@@ -1,0 +1,1 @@
+Send-MailMessage -From “roan.fourie@sibanyegold.co.za” -To “roan.fourie@sibanyegold.co.za” -UseSsl -Credential (Get-Credential) -SmtpServer “smtp.sibanyegold.co.za” 

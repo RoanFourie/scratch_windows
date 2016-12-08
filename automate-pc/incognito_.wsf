@@ -1,0 +1,8 @@
+﻿<job>
+<script language="VBScript">
+Option Explicit
+On Error Resume Next
+Dim WshShell
+Dim retVal
+set WshShell=CreateObject("WScript.Shell")
+WshShell.run "CCleaner.exe /AUTO"

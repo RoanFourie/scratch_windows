@@ -1,0 +1,53 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+127.0.0.1       localhost
+172.16.1.7	KDCW00SCVWN01CR
+172.16.14.21	SGLX00SCGRA01GL
+172.16.14.23	KDCW00SCGRA01EX
+172.16.14.25	KDCW04SCAOS01EX
+172.16.14.26	KDCW00SCAOS01GL
+172.16.14.30	KDCW05SCAOS01EX
+172.16.14.31	KDCWOPTIMINE02
+172.16.14.39	KDCW06SCAOS01EX
+172.16.14.62	KDCW00SCAOS02SR
+172.16.14.80	KDCW00SCDEV02GL
+172.16.34.1	DFTENG-SQL01
+172.16.34.3	KDCW01SCAOS01EX
+172.17.0.7	KDCE01SCAOS01CR
+172.17.0.168	KDCE00SCVPC01GL
+172.17.0.169	KDCE01SCVPC01GL
+172.17.16.3	KDCE03SCAOS01GL
+172.17.32.10	KDCE04SCAOS01GL
+172.17.32.18	KDCE04SCVPC01GL
+172.17.48.3	KDCE07SCAOS01GL
+172.17.64.3	KDCE08SCAOS01GL
+172.17.64.12	KDCE08SCVPC01GL
+172.17.80.3	KDCE10SCAOS01GL
+172.17.80.12	KDCE10SCVPC01GL
+172.17.96.3	KDCE00SCTSE01GL
+172.17.96.7	KDCE00SCAOS01GL
+172.17.96.100	KDCE00SCDEV01GL
+172.17.96.103	KDCE00SCDEV03GL
+172.17.96.200	KDCE00SCDEV04GL
+172.17.96.108	KDCE00SCDEV04GL
+

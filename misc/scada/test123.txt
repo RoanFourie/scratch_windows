@@ -1,0 +1,73 @@
+KDCE_S04_22PMP01_Motor
+KDCE_S04_22PMP01_00IDT#100
+KDCE_S04_22PMP01_00IDT#101
+KDCE_S04_22PMP01_00IET#100
+KDCE_S04_22PMP01_00IFS#100
+KDCE_S04_22PMP01_00IIT#100
+KDCE_S04_22PMP01_00IJT#100
+KDCE_S04_22PMP01_00ITT#100
+KDCE_S04_22PMP01_00ITT#101
+KDCE_S04_22PMP01_00ITT#102
+KDCE_S04_22PMP01_00ITT#103
+KDCE_S04_22PMP01_00ITT#104
+KDCE_S04_22PMP01_00ITT#105
+KDCE_S04_22PMP01_00ITT#106
+KDCE_S04_22PMP01_00ITT#107
+KDCE_S04_22PMP01_00ITT#108
+KDCE_S04_22PMP01_00IVT#100
+KDCE_S04_22PMP01_00IVT#101
+KDCE_S04_22PMP01_00IZT#100
+KDCE_S04_22PMP01_Motor
+'Wait two execution counts to make sure script executes'
+If Me.scrAssignIO.ExecutionCnt > 2 Then
+
+
+    'Declare variables
+    DIM Datasource AS STRING;
+    DIM AliasDB AS INDIRECT;
+    DIM test1_Exist AS INTEGER;
+    DIM test2_Exist AS INTEGER;
+    DIM test3_Exist AS INTEGER;
+    'Datasource is the input/output source you want to allocate to your field attribute
+    Datasource = Me.PLCPath + "." + Me.Tagname;
+
+    'Create the alias list that is in the Device Integration object using the PLCPath uda to make it more dynamic
+    AliasDB.bindto(Me.PLCPath + ".AliasDataBase");
+    'The exist variables will return an integer value when the string exists in the alias database in the DI object
+    'A string comparison is done between the Alias DB list and the Attribute to see if the attribute exists in the Alias DB
+    'The StringChar function looks at the ASCII value for a quote which seperates the alias tags from each other in the aliasDB
+    test1_Exist = StringInString(AliasDB, (StringChar(34) + Me.TagName + ".test1" + StringChar(34)),1,0);
+    test2_Exist = StringInString(AliasDB, (StringChar(34) + Me.TagName + ".test2" + StringChar(34)),1,0);
+    test3_Exist = StringInString(AliasDB, (StringChar(34) + Me.TagName + ".test3" + StringChar(34)),1,0);
+
+    'The value is then assigned to the RF Field Attribute input source or unassigned if it is not in the AliasDB
+    If test1_Exist > 0 Then
+        Me.test1.Input.InputSource = Datasource + ".test1";
+    Else
+        Me.test1.Input.InputSource = "---";
+    Endif;
+
+    'The value is then assigned to the RF Field Attribute input source or unassigned if it is not in the AliasDB
+    If test2_Exist > 0 Then
+        Me.test2.Input.InputSource = Datasource + ".test2";
+    Else
+        Me.test2.Input.InputSource = "---";
+    Endif;
+
+    'The value is then assigned to the RF Field Attribute input source or unassigned if it is not in the AliasDB
+    If test3_Exist > 0 Then
+        Me.test3.Input.InputSource = Datasource + ".test3";
+    Else
+        Me.test3.Input.InputSource = "---";
+    Endif;
+
+    'The script is then finished by setting the trigger bit to true and it will stop executing
+    Me.AssignIOCmd = True;
+
+    LogMessage (Me.Tagname + "PIP");
+
+EndIf;
+
+'A Log Message flag is added to see if the script executed in the SMC - This can be excluded and is for troubleshooting
+'LogMessage (Me.Tagname + "Finished");
+
