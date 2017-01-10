@@ -1,2 +1,0 @@
-nltest /dsgetdc:gflsadfteng
-pause

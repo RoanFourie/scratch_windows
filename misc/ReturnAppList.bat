@@ -1,1 +1,0 @@
-for /f "tokens=10 delims=," %%F in ('tasklist /v /fi "imagename eq %1" /fo csv') do @echo %%~F >>result.txt

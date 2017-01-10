@@ -1,1 +1,0 @@
-C:\WINDOWS\system32\WScript.Exe "C:\CSV import 1.vbs" "C:\test data.csv" "C:\test Report.xlsx"
